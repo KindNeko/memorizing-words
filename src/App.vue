@@ -1,15 +1,9 @@
 <script setup>
-const currentDate = new Date();
-
-const day = currentDate.getDate();
-const month = currentDate.getMonth() + 1;
-const year = currentDate.getFullYear();
-
-const dateString = `${day}.${month}.${year}`;
+import Button from './components/Button.vue';
 </script>
 
 <template>
-	<div>{{ dateString }}</div>
+	<main class="main"><Button> Начать игру </Button></main>
 </template>
 
 <style scoped></style>
