@@ -1,5 +1,10 @@
+* {
+	margin: 0;
+	padding: 0;
+}
 :root {
 	--color-primary: #ffff;
+	--color-secondary: #222222;
 	--color-bg-btn: #008bfe;
 	--font: 'Roboto', sans-serif;
 }
@@ -11,8 +16,19 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	font-family: var(--font);
 	color: var(--color-primary);
+	background-color: #f0f4f8;
+}
 
-	display: grid;
-	place-items: center;
+#app {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	min-height: 100vh;
+}
+
+.main {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	justify-content: center;
 }
