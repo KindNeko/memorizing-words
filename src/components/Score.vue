@@ -1,13 +1,13 @@
 <script setup>
 import Heath from './icons/Heath.vue';
 const num = defineProps({
-	number: String,
+	score: String,
 });
 </script>
 
 <template>
 	<div class="score">
-		<div>{{ number }}</div>
+		<div>{{ score }}</div>
 		<Heath />
 	</div>
 </template>

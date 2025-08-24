@@ -1,13 +1,19 @@
 <script setup>
+import { ref } from 'vue';
 import Button from './components/Button.vue';
 import Card from './components/Card.vue';
 import Header from './components/Header.vue';
 
-const data = {
-	number: '01',
-	title: 'unadmitted',
-	action: 'Перевернуть',
-};
+const score = ref('100');
+const cards = ref([
+	{
+		number: '01',
+		word: 'unadmitted',
+		translation: 'непризнанный',
+		state: 'Перевернуть',
+		status: true,
+	},
+]);
 
 function flip(flip) {
 	console.log(flip);
@@ -18,9 +24,19 @@ function answer(answer) {
 </script>
 
 <template>
-	<Header />
+	<Header :score="score" />
 	<main class="main">
-		<Card v-bind="data" @flip="flip" @answer="answer" />
+		<Card
+			v-for="card in cards"
+			:key="card.number"
+			:number="card.number"
+			:word="card.word"
+			:translation="card.translation"
+			:state="card.state"
+			:status="card.status"
+			@flip="flip"
+			@answer="answer"
+		/>
 		<Button> Начать игру </Button>
 	</main>
 </template>

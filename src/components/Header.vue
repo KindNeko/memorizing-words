@@ -1,8 +1,8 @@
 <script setup>
 import Score from './Score.vue';
-const data = {
-	number: '100',
-};
+const data = defineProps({
+	score: String,
+});
 </script>
 
 <template>
