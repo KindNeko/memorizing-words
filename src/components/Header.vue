@@ -1,15 +1,14 @@
 <script setup>
+import { ref } from 'vue';
 import Score from './Score.vue';
-const data = {
-	number: '100',
-};
+let number = ref('100');
 </script>
 
 <template>
 	<header class="header">
 		<section class="header__section">
 			<h3 class="header__title">Запомните слово</h3>
-			<Score v-bind="data" />
+			<Score :number="number" />
 		</section>
 	</header>
 </template>

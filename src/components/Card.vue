@@ -1,8 +1,11 @@
 <script setup>
 const props = defineProps({
 	number: String,
-	title: String,
+	word: String,
+	state: Boolean,
 	action: String,
+	translations: String,
+	opened: Boolean,
 });
 
 const emits = defineEmits({
@@ -23,7 +26,7 @@ function answerCard() {
 	<div class="card">
 		<div class="card__wrapper" @click="answerCard">
 			<p class="card__number">{{ number }}</p>
-			<p>{{ title }}</p>
+			<p>{{ word }}</p>
 			<p class="card__action" @click="flipCard">{{ action }}</p>
 		</div>
 	</div>
