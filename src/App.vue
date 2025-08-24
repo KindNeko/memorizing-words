@@ -4,12 +4,16 @@ import Button from './components/Button.vue';
 import Card from './components/Card.vue';
 import Header from './components/Header.vue';
 
-const number = ref('01');
-const word = ref('unadmitted');
-const state = ref('Перевернуть');
-
-const translation = ref('непризнаный');
-const status = ref(true);
+const score = ref('100');
+const cards = ref([
+	{
+		number: '01',
+		word: 'unadmitted',
+		translation: 'непризнанный',
+		state: 'Перевернуть',
+		status: true,
+	},
+]);
 
 function flip(flip) {
 	console.log(flip);
@@ -20,20 +24,16 @@ function answer(answer) {
 </script>
 
 <template>
-	<Header />
+	<Header :score="score" />
 	<main class="main">
 		<Card
-			:number="number"
-			:word="word"
-			:state="state"
-			@flip="flip"
-			@answer="answer"
-		/>
-		<Card
-			:number="number"
-			:status="status"
-			:translation="translation"
-			:state="state"
+			v-for="card in cards"
+			:key="card.number"
+			:number="card.number"
+			:word="card.word"
+			:translation="card.translation"
+			:state="card.state"
+			:status="card.status"
 			@flip="flip"
 			@answer="answer"
 		/>

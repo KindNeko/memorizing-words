@@ -1,14 +1,15 @@
 <script setup>
-import { ref } from 'vue';
 import Score from './Score.vue';
-let score = ref('100');
+const data = defineProps({
+	score: String,
+});
 </script>
 
 <template>
 	<header class="header">
 		<section class="header__section">
 			<h3 class="header__title">Запомните слово</h3>
-			<Score :score="score" />
+			<Score v-bind="data" />
 		</section>
 	</header>
 </template>
