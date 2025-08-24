@@ -2,10 +2,9 @@
 const props = defineProps({
 	number: String,
 	word: String,
-	state: Boolean,
-	action: String,
-	translations: String,
-	opened: Boolean,
+	state: String,
+	translation: String,
+	status: Boolean,
 });
 
 const emits = defineEmits({
@@ -25,9 +24,13 @@ function answerCard() {
 <template>
 	<div class="card">
 		<div class="card__wrapper" @click="answerCard">
-			<p class="card__number">{{ number }}</p>
+			<p class="card__number">
+				{{ number }}
+				{{ status }}
+			</p>
 			<p>{{ word }}</p>
-			<p class="card__action" @click="flipCard">{{ action }}</p>
+			<p>{{ translation }}</p>
+			<p class="card__action" @click="flipCard">{{ state }}</p>
 		</div>
 	</div>
 </template>

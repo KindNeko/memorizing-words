@@ -1,14 +1,14 @@
 <script setup>
 import { ref } from 'vue';
 import Score from './Score.vue';
-let number = ref('100');
+let score = ref('100');
 </script>
 
 <template>
 	<header class="header">
 		<section class="header__section">
 			<h3 class="header__title">Запомните слово</h3>
-			<Score :number="number" />
+			<Score :score="score" />
 		</section>
 	</header>
 </template>

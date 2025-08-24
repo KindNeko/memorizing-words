@@ -6,11 +6,10 @@ import Header from './components/Header.vue';
 
 const number = ref('01');
 const word = ref('unadmitted');
-const action = ref('Перевернуть');
+const state = ref('Перевернуть');
 
-const translations = ref('непризнаный');
-const state = ref(false);
-const opened = ref(false);
+const translation = ref('непризнаный');
+const status = ref(true);
 
 function flip(flip) {
 	console.log(flip);
@@ -26,7 +25,15 @@ function answer(answer) {
 		<Card
 			:number="number"
 			:word="word"
-			:action="action"
+			:state="state"
+			@flip="flip"
+			@answer="answer"
+		/>
+		<Card
+			:number="number"
+			:status="status"
+			:translation="translation"
+			:state="state"
 			@flip="flip"
 			@answer="answer"
 		/>
